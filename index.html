@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mad Curtis Company</title>
     <style>
-        /* Tipografía y Base Corporativa */
+        /* Estilos Base Corporativos */
         body { 
-            background-color: #ffffff; 
+            background-color: #f9f9f9; /* Fondo grisáceo muy sutil para resaltar los bloques blancos */
             color: #111111; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; 
@@ -15,221 +15,130 @@
             line-height: 1.5;
         }
         
-        /* Menú Superior Idéntico a Disney */
+        /* Menú Superior con Isotipo a la izquierda y Logo en el Centro */
         header { 
             background-color: #ffffff; 
-            display: flex; 
-            justify-content: space-between; 
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center; 
-            padding: 12px 60px; 
+            padding: 15px 60px; 
             border-bottom: 1px solid #e2e8f0;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .brand-container {
+        /* Isotipo en la esquina izquierda (Reemplazo del ratón) */
+        .header-left {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
 
-        /* Tu Isotipo propio (Reemplazo del ratón) */
-        .brand-icon {
-            height: 28px;
+        .brand-icon-top {
+            height: 35px;
             width: auto;
+            object-fit: contain;
         }
 
-        /* Tu Logotipo Corporativo Principal */
-        .brand-logo { 
-            font-size: 20px; 
-            font-weight: 700; 
-            color: #000000;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
+        /* Logo Corporativo Principal Centrado */
+        .header-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .brand-logo-top {
+            height: 50px; 
+            width: auto;
+            object-fit: contain;
         }
         
-        /* Navegación con tus especificaciones exactas */
-        nav a { 
+        /* Enlaces de Navegación Alineados a la Derecha */
+        .header-right {
+            display: flex;
+            justify-content: flex-end;
+            gap: 25px;
+        }
+
+        .header-right a { 
             color: #4a5568; 
-            margin-left: 30px; 
             text-decoration: none; 
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600; 
-            letter-spacing: 0.8px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             transition: color 0.15s ease;
         }
         
-        nav a:hover { 
+        .header-right a:hover { 
             color: #000000; 
         }
 
-        /* Gran Banner Principal (Hero Section) */
-        .hero-banner {
-            background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 120px 60px;
-            text-align: center;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .hero-banner h1 {
-            font-size: 46px;
-            font-weight: 800;
-            color: #000000;
-            margin: 0 0 15px 0;
-            letter-spacing: -1.5px;
-        }
-
-        .hero-banner p {
-            font-size: 19px;
-            color: #4a5568;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Secciones de Contenido General */
-        .main-container {
+        /* Contenedor Principal de la Sección de Entretenimiento */
+        .entertainment-section {
             max-width: 1200px;
             margin: 60px auto;
             padding: 0 40px;
-        }
-
-        .section-headline {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 35px;
-            border-bottom: 2px solid #111111;
-            padding-bottom: 12px;
-            display: inline-block;
-        }
-
-        /* Grid de Novedades (Newsroom) */
-        .news-grid { 
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px; 
-            margin-bottom: 60px;
-        }
-        
-        .news-card { 
-            background: #ffffff; 
-            border-radius: 6px;
-            overflow: hidden;
-            text-align: left;
-            transition: transform 0.2s ease;
-        }
-
-        .news-card:hover {
-            transform: translateY(-3px);
-        }
-        
-        .news-card img { 
-            width: 100%; 
-            height: 380px;
-            object-fit: cover;
-            border-radius: 4px;
-            background-color: #edf2f7;
-        }
-
-        .news-meta {
-            font-size: 12px;
-            color: #718096;
-            margin: 15px 0 8px 0;
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-        
-        .news-card a { 
-            display: inline-block; 
-            color: #000000; 
-            text-decoration: none; 
-            font-weight: 700; 
-            font-size: 19px;
-            line-height: 1.4;
-        }
-        
-        .news-card a:hover { 
-            color: #4a5568; 
-        }
-
-        /* Módulos Estatísticos de Impacto (Como en Disney) */
-        .impact-bar {
-            background-color: #f7fafc;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-            padding: 60px 40px;
-            margin: 80px 0;
-            display: flex;
-            justify-content: space-around;
             text-align: center;
         }
 
-        .stat-box h3 {
-            font-size: 42px;
-            font-weight: 800;
-            margin: 0 0 5px 0;
-            color: #000000;
+        /* Encabezado de la sección con tu Logo Principal */
+        .entertainment-header {
+            margin-bottom: 50px;
         }
 
-        .stat-box p {
-            font-size: 14px;
-            color: #4a5568;
-            margin: 0;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .entertainment-main-logo {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+            margin-bottom: 15px;
         }
 
-        /* Sección de Trailers / Multimedia inferior */
-        .trailers-section {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 80px 60px;
+        .entertainment-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111111;
+            margin: 0 0 10px 0;
         }
 
-        .trailers-container {
-            max-width: 1200px;
+        .entertainment-header p {
+            font-size: 15px;
+            color: #666666;
+            max-width: 650px;
             margin: 0 auto;
         }
 
-        .trailers-title {
-            font-size: 26px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #ffffff;
-            padding-bottom: 12px;
-            display: inline-block;
-        }
-
-        .trailers-grid {
+        /* Cuadrícula de Marcas Estilo Disney (Bloques Blancos con Sombra Limpia) */
+        .brands-grid { 
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; 
+            padding: 20px 0;
         }
-
-        .video-card {
-            background: #111111;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        .video-thumb {
-            width: 100%;
-            height: 200px;
-            background-color: #222222;
+        
+        /* Tarjetas con fondo blanco y bordes exactos a tu ejemplo */
+        .brand-card { 
+            background: #ffffff; 
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            color: #666;
-            cursor: pointer;
-            border-radius: 4px;
+            height: 200px;
+            padding: 25px;
+            box-sizing: border-box;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .video-card h4 {
-            margin: 15px 10px;
-            font-size: 16px;
+        .brand-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+        
+        .brand-card img { 
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         /* Footer Oficial */
@@ -240,89 +149,112 @@
             text-align: center;
             font-size: 13px;
             color: #718096;
+            margin-top: 100px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Encabezado con tus Links Personalizados -->
+    <!-- Menú Estilo Disney Company -->
     <header>
-        <div class="brand-container">
-            <!-- Espacio para tu isotipo (reemplazo del ratón) -->
-            <img class="brand-icon" src="images/tu-icono.png" alt="Icono" onerror="this.src='https://placeholder.com'">
-            <div class="brand-logo">The Mad Curtis Company</div>
+        <!-- Izquierda: Tu Isotipo corporativo (reemplazo del ratón) -->
+        <div class="header-left">
+            <img class="brand-icon-top" src="images/Mad_logo.png" alt="Mad Icon">
         </div>
         
-        <nav>
+        <!-- Centro: Tu Logotipo Principal -->
+        <div class="header-center">
+            <img class="brand-logo-top" src="images/TheMadCurtisCompany_logo.png" alt="The Mad Curtis Company">
+        </div>
+        
+        <!-- Derecha: Navegación limpia -->
+        <div class="header-right">
             <a href="about.html">About</a>
-            <a href="https://mad.com">mad.com</a> <!-- Cambiado por Investor Relations -->
+            <a href="https://mad.com">mad.com</a>
             <a href="newsroom.html">Newsroom</a>
             <a href="impact.html">Impact</a>
             <a href="careers.html">Careers</a>
-        </nav>
+        </div>
     </header>
 
-    <!-- Sección de Introducción de la Compañía -->
-    <div class="hero-banner">
-        <h1>Informing, Entertaining and Inspiring</h1>
-        <p>El hogar de las historias independientes, producciones visuales y universos creativos de The Mad Curtis Company.</p>
-    </div>
-
-    <div class="main-container">
-        <!-- Sección de Producciones (Estilo Newsroom de Disney) -->
-        <h2 class="section-headline">Featured News</h2>
+    <!-- Sección de Entretenimiento (Clon de tu imagen) -->
+    <div class="entertainment-section">
         
-        <div class="news-grid">
-            <!-- Película 1: Toy Story 5 -->
-            <div class="news-card">
-                <img src="images/toy-story-poster.jpg" alt="Toy Story 5" onerror="this.src='https://placeholder.com0x380'">
-                <div class="news-meta">Entertainment — June 2026</div>
-                <div>
-                    <a href="movies/toy-story-5/index.html">'Toy Story 5' Soars to Global Release</a>
-                </div>
+        <div class="entertainment-header">
+            <!-- Logo principal liderando la sección -->
+            <img class="entertainment-main-logo" src="images/TheMadCurtisCompany_logo.png" alt="Mad Curtis Entertainment">
+            <h2>Mad Curtis Entertainment</h2>
+            <p>Includes the company’s full portfolio of entertainment media, independent content businesses, visual arts and digital platforms globally.</p>
+        </div>
+        
+        <!-- Cuadrícula de Bloques Blancos Estilo Disney -->
+        <div class="brands-grid">
+            
+            <!-- Mad Curtis Studios -->
+            <div class="brand-card">
+                <img src="images/MadCurtisStudios_logo.png" alt="Mad Curtis Studios">
             </div>
 
-            <!-- Puedes duplicar este bloque completo de abajo para agregar más tarjetas -->
-            <div class="news-card">
-                <img src="images/proximo-estreno.jpg" alt="Proyecto Nuevo" onerror="this.src='https://placeholder.com0x380'">
-                <div class="news-meta">Production — Coming Soon</div>
-                <div>
-                    <a href="#">Próximo Proyecto Cinematográfico</a>
-                </div>
+            <!-- Mad Animation Studios -->
+            <div class="brand-card">
+                <img src="images/MadAnimationStudios_logo.png" alt="Mad Animation Studios" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Mad Animation Studios</span>'">
             </div>
-        </div>
-    </div>
 
-    <!-- Barra de Impacto Social y Corporativo -->
-    <div class="impact-bar">
-        <div class="stat-box">
-            <h3>100%</h3>
-            <p>Contenido Original</p>
-        </div>
-        <div class="stat-box">
-            <h3>2026</h3>
-            <p>Año de Lanzamiento</p>
-        </div>
-        <div class="stat-box">
-            <h3>Global</h3>
-            <p>Alcance de Historias</p>
-        </div>
-    </div>
-
-    <!-- Sección Oscura de Tráilers (Fondo Negro abajo de la web) -->
-    <div class="trailers-section">
-        <div class="trailers-container">
-            <h2 class="trailers-title">Explore Our Latest Trailers</h2>
-            <div class="trailers-grid">
-                <div class="video-card">
-                    <div class="video-thumb">Reproducir Tráiler</div>
-                    <h4>Toy Story 5 - Official Teaser</h4>
-                </div>
-                <div class="video-card">
-                    <div class="video-thumb">Reproducir Tráiler</div>
-                    <h4>Proyecto Alpha - Primer Vistazo</h4>
-                </div>
+            <!-- Mad Curtis Music Group -->
+            <div class="brand-card">
+                <img src="images/MadCurtisMusicGroup_logo.png" alt="Mad Curtis Music Group" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Mad Curtis Music Group</span>'">
             </div>
+
+            <!-- Mad Television -->
+            <div class="brand-card">
+                <img src="images/MadTelevision_logo.png" alt="Mad Television" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Mad Television</span>'">
+            </div>
+
+            <!-- Virtual Experiences by Mad -->
+            <div class="brand-card">
+                <img src="images/VirtualExperiencesbyMad_logo.png" alt="Virtual Experiences by Mad" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Virtual Experiences by Mad</span>'">
+            </div>
+
+            <!-- Mad Plus -->
+            <div class="brand-card">
+                <img src="images/MadPlus_logo.png" alt="Mad Plus" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Mad Plus</span>'">
+            </div>
+
+            <!-- Arroyo Brothers Pictures -->
+            <div class="brand-card">
+                <img src="images/ArroyoBrothersPictures_logo.png" alt="Arroyo Brothers Pictures">
+            </div>
+
+            <!-- Hollywood Madness Records -->
+            <div class="brand-card">
+                <img src="images/HollywoodMadnessRecords_logo.png" alt="Hollywood Madness Records" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Hollywood Madness Records</span>'">
+            </div>
+
+            <!-- Mad Store -->
+            <div class="brand-card">
+                <img src="images/MadStore_logo.png" alt="Mad Store">
+            </div>
+
+            <!-- Mad Curtis Records -->
+            <div class="brand-card">
+                <img src="images/MadCurtisRecords_logo.png" alt="Mad Curtis Records">
+            </div>
+
+            <!-- Mad Studios -->
+            <div class="brand-card">
+                <img src="images/MadStudios_logo.png" alt="Mad Studios">
+            </div>
+
+            <!-- M26 -->
+            <div class="brand-card">
+                <img src="images/M26_logo.png" alt="M26">
+            </div>
+
+            <!-- MAD Company Productions -->
+            <div class="brand-card">
+                <img src="images/MAD Company Productions_Logo_Black_2026.png" alt="MAD Company Productions">
+            </div>
+
         </div>
     </div>
 
