@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mad Curtis Company</title>
     <style>
+        /* Base y Tipografía Corporativa */
         body { 
-            background-color: #ffffff; 
+            background-color: #fcfbf9; /* Color de fondo hueso idéntico a la imagen */
             color: #111111; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; 
@@ -14,101 +15,146 @@
             line-height: 1.5;
         }
         
-        /* Menú Superior Estilo Disney */
+        /* Menú Superior Avanzado (Distribución Exacta a la Captura) */
         header { 
             background-color: #ffffff; 
             display: grid;
-            grid-template-columns: 1fr auto 1fr;
+            grid-template-columns: auto 1fr auto 1fr;
             align-items: center; 
-            padding: 15px 60px; 
+            padding: 10px 40px; 
             border-bottom: 1px solid #e2e8f0;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .header-left { display: flex; align-items: center; }
-        .brand-icon-top { height: 35px; width: auto; object-fit: contain; }
-        .header-center { display: flex; justify-content: center; }
-        .brand-logo-top { height: 50px; width: auto; object-fit: contain; }
-        .header-right { display: flex; justify-content: flex-end; gap: 25px; }
+        /* Extremo Izquierdo: Tu Isotipo (Reemplazo de Mickey) */
+        .header-icon-container {
+            display: flex;
+            align-items: center;
+            padding-right: 30px;
+        }
 
-        .header-right a { 
-            color: #4a5568; 
+        .brand-icon-mickey {
+            height: 42px; /* Tamaño idéntico al icono de Mickey de la captura */
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Bloque de Menú Izquierdo */
+        .nav-left {
+            display: flex;
+            gap: 25px;
+            justify-content: flex-start;
+        }
+
+        /* Centro: Tu Logotipo Principal Corporativo */
+        .header-center-logo {
+            display: flex;
+            justify-content: center;
+            padding: 0 40px;
+        }
+
+        .brand-logo-main {
+            height: 45px; 
+            width: auto;
+            object-fit: contain;
+        }
+        
+        /* Bloque de Menú Derecho */
+        .nav-right {
+            display: flex;
+            gap: 25px;
+            justify-content: flex-end;
+        }
+
+        /* Estilo de los Enlaces del Menú */
+        nav a { 
+            color: #2c2c2c; 
             text-decoration: none; 
-            font-size: 13px;
-            font-weight: 600; 
-            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 700; 
+            letter-spacing: 1.2px;
             text-transform: uppercase;
             transition: color 0.15s ease;
         }
-        .header-right a:hover, .header-right a.active { color: #000000; }
+        
+        nav a:hover, nav a.active { 
+            color: #000000; 
+            border-bottom: 2px solid #111111;
+            padding-bottom: 4px;
+        }
 
-        /* Banner Principal de la Portada */
-        .hero-banner {
-            background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 140px 40px;
-            text-align: center;
+        /* Barra de Tendencias (Trending Bar debajo del Menú) */
+        .trending-bar {
+            background-color: #ffffff;
             border-bottom: 1px solid #e2e8f0;
-        }
-
-        .hero-banner h1 {
-            font-size: 46px;
-            font-weight: 800;
-            color: #000000;
-            margin: 0 0 20px 0;
-            letter-spacing: -1px;
-        }
-
-        .hero-banner p {
-            font-size: 20px;
-            color: #4a5568;
-            max-width: 750px;
-            margin: 0 auto 35px auto;
-        }
-
-        /* Bloque de Invitación a las Marcas (Estilo WBD / Disney About) */
-        .brands-teaser-section {
-            max-width: 1000px;
-            margin: 80px auto;
-            padding: 0 40px;
-            text-align: center;
-        }
-
-        .brands-teaser-section h2 {
-            font-size: 32px;
+            padding: 12px 40px;
+            font-size: 11px;
             font-weight: 700;
-            margin-bottom: 20px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .brands-teaser-section p {
-            font-size: 16px;
-            color: #4a5568;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            line-height: 1.7;
-        }
-
-        /* Botón Premium para Navegar a la Subpágina de Marcas */
-        .cta-button {
-            display: inline-block;
-            background-color: #111111;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 15px 35px;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
+        .trending-label {
+            color: #111111;
             text-transform: uppercase;
-            border-radius: 4px;
-            transition: background-color 0.2s ease, transform 0.2s ease;
+            border-right: 2px solid #e2e8f0;
+            padding-right: 15px;
         }
 
-        .cta-button:hover {
-            background-color: #2d3748;
-            transform: translateY(-2px);
+        .trending-text {
+            color: #2c2c2c;
+            text-transform: uppercase;
         }
 
+        /* Gran Banner Central (Hero Image Corporativa) */
+        .hero-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        .hero-image-wrapper {
+            width: 100%;
+            height: 500px;
+            background-color: #e2e8f0;
+            border-radius: 16px; /* Bordes redondeados sutiles como la captura */
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Contenido Inferior de la Portada */
+        .welcome-content {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .welcome-content h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .welcome-content p {
+            font-size: 17px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* Footer */
         footer {
             background-color: #ffffff;
             padding: 40px 60px;
@@ -116,41 +162,61 @@
             text-align: center;
             font-size: 13px;
             color: #718096;
-            margin-top: 120px;
+            margin-top: 80px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Encabezado Estructurado Fiel a la Captura -->
     <header>
-        <div class="header-left">
-            <img class="brand-icon-top" src="images/Mad_logo.png" alt="Mad Icon">
+        <!-- Reemplazo de Mickey (Esquina Izquierda) -->
+        <div class="header-icon-container">
+            <img class="brand-icon-mickey" src="images/Mad_logo.png" alt="Mad Icon">
         </div>
-        <div class="header-center">
-            <img class="brand-logo-top" src="images/TheMadCurtisCompany_logo.png" alt="The Mad Curtis Company">
-        </div>
-        <div class="header-right">
-            <a href="index.html" class="active">Home</a>
-            <a href="our-brands.html">Our Brands</a> <!-- El link que llevará a la subpágina -->
+        
+        <!-- Bloque de Navegación Izquierdo -->
+        <nav class="nav-left">
             <a href="about.html">About</a>
-            <a href="https://mad.com">mad.com</a>
+            <a href="our-brands.html">Our Brands</a>
+        </nav>
+        
+        <!-- Centro: Reemplazo del Logo de The Walt Disney Company -->
+        <div class="header-center-logo">
+            <img class="brand-logo-main" src="images/TheMadCurtisCompany_logo.png" alt="The Mad Curtis Company">
+        </div>
+        
+        <!-- Bloque de Navegación Derecho -->
+        <nav class="nav-right">
+            <a href="movies.html">Movies</a>
+            <a href="tvshows.html">TV Shows</a>
+            <a href="newsroom.html">Newsroom</a>
+            <a href="impact.html">Impact</a>
+            <a href="careers.html">Careers</a>
         </nav>
     </header>
 
-    <div class="hero-banner">
+    <!-- Barra Trending Oficial -->
+    <div class="trending-bar">
+        <span class="trending-label">Trending</span>
+        <span class="trending-text">"The Mad Curtis Company" Launches Its Official Global Corporate Platform</span>
+    </div>
+
+    <!-- Gran Sección del Edificio / Foto Principal Central -->
+    <div class="hero-container">
+        <div class="hero-image-wrapper">
+            <!-- NOTA: Sube una foto de tus oficinas o un banner corporativo grande a tu carpeta images y cámbiala aquí -->
+            <img src="https://unsplash.com" alt="Corporate Headquarters">
+        </div>
+    </div>
+
+    <!-- Texto de Bienvenida Corporativo -->
+    <div class="welcome-content">
         <h1>Informing, Entertaining and Inspiring</h1>
-        <p>Welcome to the official corporate home of independent storytelling and visual production.</p>
+        <p>Welcome to the global independent portfolio of stories, digital entertainment platforms, and creative laboratories of The Mad Curtis Company.</p>
     </div>
 
-    <!-- Sección de transito que redirige a la subpágina completa -->
-    <div class="brands-teaser-section">
-        <h2>Stories That Connect Us</h2>
-        <p>From independent film studios and animation laboratories to digital entertainment platforms and music publishers. The Mad Curtis Company hosts a global portfolio of pioneering media assets.</p>
-        
-        <!-- Al hacer clic aquí, se abrirá el portafolio de marcas -->
-        <a href="our-brands.html" class="cta-button">Explore Our Brands</a>
-    </div>
-
+    <!-- Pie de Página -->
     <footer>
         <p>Copyright 2026 © The Mad Curtis Company. All Rights Reserved.</p>
     </footer>
