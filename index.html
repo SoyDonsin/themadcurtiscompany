@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mad Curtis Company</title>
     <style>
-        /* Estilos Base Corporativos */
         body { 
-            background-color: #f9f9f9; /* Fondo grisáceo muy sutil para resaltar los bloques blancos */
+            background-color: #ffffff; 
             color: #111111; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; 
@@ -15,7 +14,7 @@
             line-height: 1.5;
         }
         
-        /* Menú Superior con Isotipo a la izquierda y Logo en el Centro */
+        /* Menú Superior Estilo Disney */
         header { 
             background-color: #ffffff; 
             display: grid;
@@ -28,36 +27,11 @@
             z-index: 1000;
         }
 
-        /* Isotipo en la esquina izquierda (Reemplazo del ratón) */
-        .header-left {
-            display: flex;
-            align-items: center;
-        }
-
-        .brand-icon-top {
-            height: 35px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        /* Logo Corporativo Principal Centrado */
-        .header-center {
-            display: flex;
-            justify-content: center;
-        }
-
-        .brand-logo-top {
-            height: 50px; 
-            width: auto;
-            object-fit: contain;
-        }
-        
-        /* Enlaces de Navegación Alineados a la Derecha */
-        .header-right {
-            display: flex;
-            justify-content: flex-end;
-            gap: 25px;
-        }
+        .header-left { display: flex; align-items: center; }
+        .brand-icon-top { height: 35px; width: auto; object-fit: contain; }
+        .header-center { display: flex; justify-content: center; }
+        .brand-logo-top { height: 50px; width: auto; object-fit: contain; }
+        .header-right { display: flex; justify-content: flex-end; gap: 25px; }
 
         .header-right a { 
             color: #4a5568; 
@@ -68,80 +42,73 @@
             text-transform: uppercase;
             transition: color 0.15s ease;
         }
-        
-        .header-right a:hover { 
-            color: #000000; 
+        .header-right a:hover, .header-right a.active { color: #000000; }
+
+        /* Banner Principal de la Portada */
+        .hero-banner {
+            background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 140px 40px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        /* Contenedor Principal de la Sección de Entretenimiento */
-        .entertainment-section {
-            max-width: 1200px;
-            margin: 60px auto;
+        .hero-banner h1 {
+            font-size: 46px;
+            font-weight: 800;
+            color: #000000;
+            margin: 0 0 20px 0;
+            letter-spacing: -1px;
+        }
+
+        .hero-banner p {
+            font-size: 20px;
+            color: #4a5568;
+            max-width: 750px;
+            margin: 0 auto 35px auto;
+        }
+
+        /* Bloque de Invitación a las Marcas (Estilo WBD / Disney About) */
+        .brands-teaser-section {
+            max-width: 1000px;
+            margin: 80px auto;
             padding: 0 40px;
             text-align: center;
         }
 
-        /* Encabezado de la sección con tu Logo Principal */
-        .entertainment-header {
-            margin-bottom: 50px;
-        }
-
-        .entertainment-main-logo {
-            height: 70px;
-            width: auto;
-            object-fit: contain;
-            margin-bottom: 15px;
-        }
-
-        .entertainment-header h2 {
+        .brands-teaser-section h2 {
             font-size: 32px;
             font-weight: 700;
-            color: #111111;
-            margin: 0 0 10px 0;
+            margin-bottom: 20px;
         }
 
-        .entertainment-header p {
-            font-size: 15px;
-            color: #666666;
-            max-width: 650px;
-            margin: 0 auto;
+        .brands-teaser-section p {
+            font-size: 16px;
+            color: #4a5568;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            line-height: 1.7;
         }
 
-        /* Cuadrícula de Marcas Estilo Disney (Bloques Blancos con Sombra Limpia) */
-        .brands-grid { 
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px; 
-            padding: 20px 0;
-        }
-        
-        /* Tarjetas con fondo blanco y bordes exactos a tu ejemplo */
-        .brand-card { 
-            background: #ffffff; 
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 200px;
-            padding: 25px;
-            box-sizing: border-box;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        /* Botón Premium para Navegar a la Subpágina de Marcas */
+        .cta-button {
+            display: inline-block;
+            background-color: #111111;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 35px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
         }
 
-        .brand-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
-        }
-        
-        .brand-card img { 
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+        .cta-button:hover {
+            background-color: #2d3748;
+            transform: translateY(-2px);
         }
 
-        /* Footer Oficial */
         footer {
             background-color: #ffffff;
             padding: 40px 60px;
@@ -149,116 +116,41 @@
             text-align: center;
             font-size: 13px;
             color: #718096;
-            margin-top: 100px;
+            margin-top: 120px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Menú Estilo Disney Company -->
     <header>
-        <!-- Izquierda: Tu Isotipo corporativo (reemplazo del ratón) -->
         <div class="header-left">
             <img class="brand-icon-top" src="images/Mad_logo.png" alt="Mad Icon">
         </div>
-        
-        <!-- Centro: Tu Logotipo Principal -->
         <div class="header-center">
             <img class="brand-logo-top" src="images/TheMadCurtisCompany_logo.png" alt="The Mad Curtis Company">
         </div>
-        
-        <!-- Derecha: Navegación limpia -->
         <div class="header-right">
+            <a href="index.html" class="active">Home</a>
+            <a href="our-brands.html">Our Brands</a> <!-- El link que llevará a la subpágina -->
             <a href="about.html">About</a>
             <a href="https://mad.com">mad.com</a>
-            <a href="newsroom.html">Newsroom</a>
-            <a href="impact.html">Impact</a>
-            <a href="careers.html">Careers</a>
-        </div>
+        </nav>
     </header>
 
-    <!-- Sección de Entretenimiento (Clon de tu imagen) -->
-    <div class="entertainment-section">
-        
-        <div class="entertainment-header">
-            <!-- Logo principal liderando la sección -->
-            <img class="entertainment-main-logo" src="images/TheMadCurtisCompany_logo.png" alt="Mad Curtis Entertainment">
-            <h2>Mad Curtis Entertainment</h2>
-            <p>Includes the company’s full portfolio of entertainment media, independent content businesses, visual arts and digital platforms globally.</p>
-        </div>
-        
-        <!-- Cuadrícula de Bloques Blancos Estilo Disney -->
-        <div class="brands-grid">
-            
-            <!-- Mad Curtis Studios -->
-            <div class="brand-card">
-                <img src="images/MadCurtisStudios_logo.png" alt="Mad Curtis Studios">
-            </div>
-
-            <!-- Mad Animation Studios -->
-            <div class="brand-card">
-                <img src="images/MadAnimationStudios_logo.png" alt="Mad Animation Studios" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Mad Animation Studios</span>'">
-            </div>
-
-            <!-- Mad Curtis Music Group -->
-            <div class="brand-card">
-                <img src="images/MadCurtisMusicGroup_logo.png" alt="Mad Curtis Music Group" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Mad Curtis Music Group</span>'">
-            </div>
-
-            <!-- Mad Television -->
-            <div class="brand-card">
-                <img src="images/MadTelevision_logo.png" alt="Mad Television" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Mad Television</span>'">
-            </div>
-
-            <!-- Virtual Experiences by Mad -->
-            <div class="brand-card">
-                <img src="images/VirtualExperiencesbyMad_logo.png" alt="Virtual Experiences by Mad" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Virtual Experiences by Mad</span>'">
-            </div>
-
-            <!-- Mad Plus -->
-            <div class="brand-card">
-                <img src="images/MadPlus_logo.png" alt="Mad Plus" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Mad Plus</span>'">
-            </div>
-
-            <!-- Arroyo Brothers Pictures -->
-            <div class="brand-card">
-                <img src="images/ArroyoBrothersPictures_logo.png" alt="Arroyo Brothers Pictures">
-            </div>
-
-            <!-- Hollywood Madness Records -->
-            <div class="brand-card">
-                <img src="images/HollywoodMadnessRecords_logo.png" alt="Hollywood Madness Records" onerror="this.style.display='none'; this.parentNode.innerHTML='<span style=\"color:#999; font-weight:600;\">Hollywood Madness Records</span>'">
-            </div>
-
-            <!-- Mad Store -->
-            <div class="brand-card">
-                <img src="images/MadStore_logo.png" alt="Mad Store">
-            </div>
-
-            <!-- Mad Curtis Records -->
-            <div class="brand-card">
-                <img src="images/MadCurtisRecords_logo.png" alt="Mad Curtis Records">
-            </div>
-
-            <!-- Mad Studios -->
-            <div class="brand-card">
-                <img src="images/MadStudios_logo.png" alt="Mad Studios">
-            </div>
-
-            <!-- M26 -->
-            <div class="brand-card">
-                <img src="images/M26_logo.png" alt="M26">
-            </div>
-
-            <!-- MAD Company Productions -->
-            <div class="brand-card">
-                <img src="images/MAD Company Productions_Logo_Black_2026.png" alt="MAD Company Productions">
-            </div>
-
-        </div>
+    <div class="hero-banner">
+        <h1>Informing, Entertaining and Inspiring</h1>
+        <p>Welcome to the official corporate home of independent storytelling and visual production.</p>
     </div>
 
-    <!-- Pie de Página -->
+    <!-- Sección de transito que redirige a la subpágina completa -->
+    <div class="brands-teaser-section">
+        <h2>Stories That Connect Us</h2>
+        <p>From independent film studios and animation laboratories to digital entertainment platforms and music publishers. The Mad Curtis Company hosts a global portfolio of pioneering media assets.</p>
+        
+        <!-- Al hacer clic aquí, se abrirá el portafolio de marcas -->
+        <a href="our-brands.html" class="cta-button">Explore Our Brands</a>
+    </div>
+
     <footer>
         <p>Copyright 2026 © The Mad Curtis Company. All Rights Reserved.</p>
     </footer>
