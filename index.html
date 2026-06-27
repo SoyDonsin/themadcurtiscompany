@@ -5,199 +5,331 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mad Curtis Company</title>
     <style>
-        /* Estilos globales inspirados en Disney Company */
+        /* Tipografía y Base Corporativa */
         body { 
             background-color: #ffffff; 
-            color: #2c2c2c; 
+            color: #111111; 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
             margin: 0; 
             padding: 0;
+            line-height: 1.5;
         }
         
-        /* Barra de navegación superior fija y limpia */
+        /* Menú Superior Idéntico a Disney */
         header { 
             background-color: #ffffff; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
-            padding: 15px 40px; 
-            border-bottom: 1px solid #e5e5e5;
+            padding: 12px 60px; 
+            border-bottom: 1px solid #e2e8f0;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        /* Contenedor del logotipo e isotipo */
         .brand-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
-        /* Imagen de tu logotipo (el ratón/tu icono corporativo) */
+        /* Tu Isotipo propio (Reemplazo del ratón) */
         .brand-icon {
-            height: 32px;
+            height: 28px;
             width: auto;
         }
 
-        /* Texto del logotipo oficial */
+        /* Tu Logotipo Corporativo Principal */
         .brand-logo { 
-            font-size: 21px; 
+            font-size: 20px; 
             font-weight: 700; 
-            color: #111111;
+            color: #000000;
             letter-spacing: -0.5px;
             text-transform: uppercase;
         }
         
-        /* Menú de opciones solicitado */
+        /* Navegación con tus especificaciones exactas */
         nav a { 
-            color: #555555; 
-            margin-left: 25px; 
+            color: #4a5568; 
+            margin-left: 30px; 
             text-decoration: none; 
             font-size: 14px;
-            font-weight: 500; 
-            letter-spacing: 0.5px;
+            font-weight: 600; 
+            letter-spacing: 0.8px;
             text-transform: uppercase;
-            transition: color 0.2s ease;
+            transition: color 0.15s ease;
         }
         
         nav a:hover { 
             color: #000000; 
         }
 
-        /* Bloque principal de presentación (Hero Banner) */
-        .hero-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 100px 40px;
+        /* Gran Banner Principal (Hero Section) */
+        .hero-banner {
+            background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 120px 60px;
             text-align: center;
-            border-bottom: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .hero-section h1 {
-            font-size: 42px;
+        .hero-banner h1 {
+            font-size: 46px;
             font-weight: 800;
-            color: #111111;
+            color: #000000;
             margin: 0 0 15px 0;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
         }
 
-        .hero-section p {
-            font-size: 18px;
-            color: #666666;
-            max-width: 600px;
+        .hero-banner p {
+            font-size: 19px;
+            color: #4a5568;
+            max-width: 700px;
             margin: 0 auto;
-            line-height: 1.6;
         }
 
-        /* Sección de contenidos o cartelera */
-        .content-container {
+        /* Secciones de Contenido General */
+        .main-container {
             max-width: 1200px;
             margin: 60px auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
 
-        .section-title {
-            font-size: 24px;
+        .section-headline {
+            font-size: 26px;
             font-weight: 700;
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 10px;
+            margin-bottom: 35px;
+            border-bottom: 2px solid #111111;
+            padding-bottom: 12px;
+            display: inline-block;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 3px;
-            background-color: #111111;
-        }
-
-        .grid-layout { 
-            display: flex; 
-            gap: 30px; 
+        /* Grid de Novedades (Newsroom) */
+        .news-grid { 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px; 
+            margin-bottom: 60px;
         }
         
-        .item-card { 
+        .news-card { 
             background: #ffffff; 
-            border: 1px solid #e5e5e5;
-            border-radius: 4px; 
+            border-radius: 6px;
             overflow: hidden;
-            width: 280px; 
             text-align: left;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease;
         }
 
-        .item-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        .news-card:hover {
+            transform: translateY(-3px);
         }
         
-        .item-card img { 
+        .news-card img { 
             width: 100%; 
             height: 380px;
             object-fit: cover;
-            border-bottom: 1px solid #e5e5e5;
+            border-radius: 4px;
+            background-color: #edf2f7;
         }
 
-        .item-info {
-            padding: 20px;
+        .news-meta {
+            font-size: 12px;
+            color: #718096;
+            margin: 15px 0 8px 0;
+            text-transform: uppercase;
+            font-weight: 600;
         }
         
-        .item-info a { 
+        .news-card a { 
             display: inline-block; 
-            color: #111111; 
+            color: #000000; 
             text-decoration: none; 
             font-weight: 700; 
-            font-size: 18px;
+            font-size: 19px;
+            line-height: 1.4;
         }
         
-        .item-info a:hover { 
-            color: #555555; 
+        .news-card a:hover { 
+            color: #4a5568; 
+        }
+
+        /* Módulos Estatísticos de Impacto (Como en Disney) */
+        .impact-bar {
+            background-color: #f7fafc;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 60px 40px;
+            margin: 80px 0;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            font-size: 42px;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+            color: #000000;
+        }
+
+        .stat-box p {
+            font-size: 14px;
+            color: #4a5568;
+            margin: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sección de Trailers / Multimedia inferior */
+        .trailers-section {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 80px 60px;
+        }
+
+        .trailers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trailers-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 12px;
+            display: inline-block;
+        }
+
+        .trailers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: #111111;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .video-thumb {
+            width: 100%;
+            height: 200px;
+            background-color: #222222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .video-card h4 {
+            margin: 15px 10px;
+            font-size: 16px;
+        }
+
+        /* Footer Oficial */
+        footer {
+            background-color: #ffffff;
+            padding: 40px 60px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            font-size: 13px;
+            color: #718096;
         }
     </style>
 </head>
 <body>
 
+    <!-- Encabezado con tus Links Personalizados -->
     <header>
         <div class="brand-container">
-            <!-- AQUÍ VA TU ICONO PROPIO (EL REEMPLAZO DEL RATÓN) -->
-            <!-- Cuando subas tu imagen, cambias este enlace provisional por: images/tu-icono.png -->
-            <img class="brand-icon" src="https://placeholder.com" alt="Icono">
-            
-            <!-- TU LOGOTIPO CORPORATIVO TEXTUAL -->
+            <!-- Espacio para tu isotipo (reemplazo del ratón) -->
+            <img class="brand-icon" src="images/tu-icono.png" alt="Icono" onerror="this.src='https://placeholder.com'">
             <div class="brand-logo">The Mad Curtis Company</div>
         </div>
         
         <nav>
-            <a href="#">About</a>
-            <a href="#">mad.com</a> <!-- Reemplazo de Investor Relations -->
-            <a href="#">Newsroom</a>
-            <a href="#">Impact</a>
-            <a href="#">Careers</a>
+            <a href="about.html">About</a>
+            <a href="https://mad.com">mad.com</a> <!-- Cambiado por Investor Relations -->
+            <a href="newsroom.html">Newsroom</a>
+            <a href="impact.html">Impact</a>
+            <a href="careers.html">Careers</a>
         </nav>
     </header>
 
-    <div class="hero-section">
-        <h1>Inspirando a través de la creatividad</h1>
-        <p>Creamos historias, experiencias y universos visuales únicos bajo el sello independiente de The Mad Curtis Company.</p>
+    <!-- Sección de Introducción de la Compañía -->
+    <div class="hero-banner">
+        <h1>Informing, Entertaining and Inspiring</h1>
+        <p>El hogar de las historias independientes, producciones visuales y universos creativos de The Mad Curtis Company.</p>
     </div>
 
-    <div class="content-container">
-        <h2 class="section-title">Nuestras Producciones</h2>
+    <div class="main-container">
+        <!-- Sección de Producciones (Estilo Newsroom de Disney) -->
+        <h2 class="section-headline">Featured News</h2>
         
-        <div class="grid-layout">
-            <div class="item-card">
-                <!-- Cuando subas tu póster real, cambias esto por: images/toy-story-poster.jpg -->
-                <img src="https://placeholder.com" alt="Toy Story 5">
-                <div class="item-info">
-                    <a href="movies/toy-story-5/index.html">Toy Story 5</a>
+        <div class="news-grid">
+            <!-- Película 1: Toy Story 5 -->
+            <div class="news-card">
+                <img src="images/toy-story-poster.jpg" alt="Toy Story 5" onerror="this.src='https://placeholder.com0x380'">
+                <div class="news-meta">Entertainment — June 2026</div>
+                <div>
+                    <a href="movies/toy-story-5/index.html">'Toy Story 5' Soars to Global Release</a>
+                </div>
+            </div>
+
+            <!-- Puedes duplicar este bloque completo de abajo para agregar más tarjetas -->
+            <div class="news-card">
+                <img src="images/proximo-estreno.jpg" alt="Proyecto Nuevo" onerror="this.src='https://placeholder.com0x380'">
+                <div class="news-meta">Production — Coming Soon</div>
+                <div>
+                    <a href="#">Próximo Proyecto Cinematográfico</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Barra de Impacto Social y Corporativo -->
+    <div class="impact-bar">
+        <div class="stat-box">
+            <h3>100%</h3>
+            <p>Contenido Original</p>
+        </div>
+        <div class="stat-box">
+            <h3>2026</h3>
+            <p>Año de Lanzamiento</p>
+        </div>
+        <div class="stat-box">
+            <h3>Global</h3>
+            <p>Alcance de Historias</p>
+        </div>
+    </div>
+
+    <!-- Sección Oscura de Tráilers (Fondo Negro abajo de la web) -->
+    <div class="trailers-section">
+        <div class="trailers-container">
+            <h2 class="trailers-title">Explore Our Latest Trailers</h2>
+            <div class="trailers-grid">
+                <div class="video-card">
+                    <div class="video-thumb">Reproducir Tráiler</div>
+                    <h4>Toy Story 5 - Official Teaser</h4>
+                </div>
+                <div class="video-card">
+                    <div class="video-thumb">Reproducir Tráiler</div>
+                    <h4>Proyecto Alpha - Primer Vistazo</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>Copyright 2026 © The Mad Curtis Company. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
-
